@@ -6,15 +6,11 @@ Ejercicio práctico de interfaces y patrones de diseño en C#. Dentro del Proyec
 
 - Crear un Proyecto de Consola con la siguiente estructura de carpetas:
 
-    ++ dominio: clases del dominio de problema 
-    
-	++ datos: con la/s interfaces y clases concretas para los repositorios de datos
-  ++ dominio: clases del dominio de problema
+    ++ dominio: clases del dominio de problema
 
   ++ datos: con la/s interfaces y clases concretas para los repositorios de datos
 
     ++ servicios: con las clases de servicio necesarias para gestionar el CRUD de la entidad principal del problema
-  ++ servicios: con las clases de servicio necesarias para gestionar el CRUD de la entidad principal del problema
 
 - Crear una base de datos con la tabla de transacción y la/s de soporte.
 
