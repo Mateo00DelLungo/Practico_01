@@ -4,8 +4,6 @@ Ejercicio práctico de interfaces y patrones de diseño en C#. Dentro del Proyec
 
 
 
-Ejercicio práctico de interfaces y patrones de diseño en C#. Dentro del Proyecto se encuentra el script de la base de datos correspondiente para el correcto funcionamiento del programa.
-
 - Crear un Proyecto de Consola con la siguiente estructura de carpetas:
 
     ++ dominio: clases del dominio de problema 
