@@ -14,8 +14,8 @@ namespace proyecto_Practica01_.Datos.ADO
         public bool Delete(int id)
         {
 
-            List<Parametros> parametros = new List<Parametros>();
-            parametros.Add(new Parametros("@id", id));
+            List<Parametro> parametros = new List<Parametro>();
+            parametros.Add(new Parametro("@id", id));
             int result = DataHelper.GetInstance().ExecuteSPNonQuery("SP_DELETE_ARTICULOS", parametros); 
             return 1 == result;
             
@@ -47,9 +47,9 @@ namespace proyecto_Practica01_.Datos.ADO
 
         public Articulo GetById(int id)
         {
-            List<Parametros> parametros = new List<Parametros>
+            List<Parametro> parametros = new List<Parametro>
             {
-                new Parametros("@id", id)
+                new Parametro("@id", id)
             };
             var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_ARTICULOS", parametros);
 
@@ -65,11 +65,11 @@ namespace proyecto_Practica01_.Datos.ADO
 
         public bool Save(Articulo oArticulo)
         {
-            List<Parametros> parametros = new List<Parametros>
+            List<Parametro> parametros = new List<Parametro>
             {
-                new Parametros("@id", oArticulo.Id),
-                new Parametros("@nombre", oArticulo.Nombre),
-                new Parametros("@precio", oArticulo.PrecioUnitario)
+                new Parametro("@id", oArticulo.Id),
+                new Parametro("@nombre", oArticulo.Nombre),
+                new Parametro("@precio", oArticulo.PrecioUnitario)
             };
             int result = DataHelper.GetInstance().ExecuteSPNonQuery("SP_SAVE_ARTICULOS", parametros);
             return result == 1;

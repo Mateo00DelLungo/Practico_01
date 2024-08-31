@@ -1,5 +1,4 @@
-﻿using proyecto_Practica01_.Datos;
-using proyecto_Practica01_.Datos.ADO;
+﻿using proyecto_Practica01_.Datos.ADO;
 using proyecto_Practica01_.Datos.Interfaces;
 using proyecto_Practica01_.Dominio;
 using System;
@@ -10,30 +9,31 @@ using System.Threading.Tasks;
 
 namespace proyecto_Practica01_.Servicios
 {
-    public class ArticuloServicio
+    public class ClienteServicio
     {
-        private readonly IArticuloRepository _repositorio;
+        private readonly IClienteRepository _repositorio;
 
-
-        public ArticuloServicio()
+        public ClienteServicio()
         {
-            _repositorio = new ArticuloRepo_ADO();
+            _repositorio = new ClienteRepo_ADO();
         }
-        public List<Articulo> GetAll()
+
+        public List<Cliente> GetAll()
         {
             return _repositorio.GetAll();
         }
-        public Articulo GetById(int id)
+        public Cliente GetById(int id)
         {
             return _repositorio.GetById(id);
         }
-        public bool Save(Articulo oArticulo)
+        public bool Save(Cliente oCliente)
         {
-            return _repositorio.Save(oArticulo);
+            return _repositorio.Save(oCliente);
         }
         public bool Delete(int id)
         {
             return _repositorio.Delete(id);
         }
     }
+
 }

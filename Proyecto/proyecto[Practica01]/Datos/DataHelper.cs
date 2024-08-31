@@ -30,7 +30,7 @@ namespace proyecto_Practica01_.Datos
             return _instance._cnn;
         }
 
-        public DataTable ExecuteSPQuery(string sp, List<Parametros>? parametros) 
+        public DataTable ExecuteSPQuery(string sp, List<Parametro>? parametros) 
         {
             DataTable dt = new DataTable();
             
@@ -64,7 +64,7 @@ namespace proyecto_Practica01_.Datos
             }
             return dt;
         }
-        public int ExecuteSPNonQuery(string sp, List<Parametros> parametros) 
+        public int ExecuteSPNonQuery(string sp, List<Parametro> parametros) 
         {
             int rows = 0;
 
