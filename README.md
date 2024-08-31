@@ -23,8 +23,10 @@ Ejercicio práctico de interfaces y patrones de diseño en C#. Dentro del Proyec
 - Desarrollar el/los procedimientos almacenados que considere para las operaciones de consulta y actualización tanto de tablas transaccionales como las de soporte. Utilizar los componentes ADO.NET desde C#
 
 - Adicionalmente deberá incluir una clase Program que permita ejecutar los métodos de servicio definidos en la capa de negocio, mostrando las salidas por consola.
+<!--
+##[![wakatime](https://wakatime.com/badge/github/Mateo00DelLungo/Practico_01.svg)](https://wakatime.com/badge/github/Mateo00DelLungo/Practico_01)
+-->
 
-[![wakatime](https://wakatime.com/badge/github/Mateo00DelLungo/Practico_01.svg)](https://wakatime.com/badge/github/Mateo00DelLungo/Practico_01)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Mateo00DelLungo/Practico_01)
 ![GitHub top language](https://img.shields.io/github/languages/top/Mateo00DelLungo/Practico_01)
 
