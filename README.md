@@ -26,6 +26,8 @@ Ejercicio práctico de interfaces y patrones de diseño en C#. Dentro del Proyec
 
 [![wakatime](https://wakatime.com/badge/github/Mateo00DelLungo/Practico_01.svg)](https://wakatime.com/badge/github/Mateo00DelLungo/Practico_01)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Mateo00DelLungo/Practico_01)
+![GitHub top language](https://img.shields.io/github/languages/top/Mateo00DelLungo/Practico_01)
+
 
 ## Autor
 
