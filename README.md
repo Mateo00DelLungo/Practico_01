@@ -25,18 +25,6 @@ Ejercicio práctico de interfaces y patrones de diseño en C#. Dentro del Proyec
 - Adicionalmente deberá incluir una clase Program que permita ejecutar los métodos de servicio definidos en la capa de negocio, mostrando las salidas por consola.
 
 
-<!--START_SECTION:waka-->
-
-```python
-From: 31 August 2024 - To: 31 August 2024
-
-Total Time: 0 secs
-
-No activity tracked
-```
-
-<!--END_SECTION:waka-->
-
 ## Autor
 
 - [@Mateo del lungo](https://github.com/Mudo0)🤓
