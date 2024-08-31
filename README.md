@@ -25,7 +25,7 @@ Ejercicio práctico de interfaces y patrones de diseño en C#. Dentro del Proyec
 - Adicionalmente deberá incluir una clase Program que permita ejecutar los métodos de servicio definidos en la capa de negocio, mostrando las salidas por consola.
 
 <img
-  src="https://github.com/Mudo0/Practico_01/blob/master/images/stat.svg"
+  src="https://github.com/Mateo00DelLungo/Practico_01/blob/master/images/stat.svg"
   alt="Alternative Text"
 />
 ## Autor
