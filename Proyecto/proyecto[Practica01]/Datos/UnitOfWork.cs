@@ -11,14 +11,14 @@ namespace proyecto_Practica01_.Datos
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private SqlTransaction _transaction;
+        private SqlTransaction _transaction = null;
         private SqlConnection _connection;
         private IFacturaRepository _repositorioFacturas;
         public IFacturaRepository RepositorioFacturas 
         { get 
             { if (_repositorioFacturas == null) 
                 {
-                    _repositorioFacturas= new FacturaRepo_ADO();
+                    _repositorioFacturas= new FacturaRepo_ADO(_transaction);
                 }
                 return _repositorioFacturas;
             } 
@@ -27,9 +27,15 @@ namespace proyecto_Practica01_.Datos
         public UnitOfWork()
         {
             _connection = DataHelper.GetConnection();
-            _transaction = _connection.BeginTransaction();
+            if (_transaction != null)
+            {
+                throw new InvalidOperationException("Ya hay una transacción activa");
+            }
+            else
+            {       
+                _transaction = _connection.BeginTransaction();
+            }
         }
-
         public void SaveChanges() 
         {
             try
@@ -42,7 +48,6 @@ namespace proyecto_Practica01_.Datos
                 throw new Exception("Error al guardar en la base de datos", ex);
             }
         }
-
         public void Dispose()
         {
             if (_transaction != null) 

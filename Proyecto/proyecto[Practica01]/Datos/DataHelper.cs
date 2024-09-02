@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyecto_Practica01_.Dominio;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -29,7 +30,6 @@ namespace proyecto_Practica01_.Datos
         {
             return _instance._cnn;
         }
-
         public DataTable ExecuteSPQuery(string sp, List<Parametro>? parametros) 
         {
             DataTable dt = new DataTable();
@@ -99,6 +99,88 @@ namespace proyecto_Practica01_.Datos
                 }
             }
             return rows;
+        }
+        
+        public (int affectedRows,int idOut) ExecuteSPNonQueryMaster(string spMaster, int facturaid,List<Parametro> masterParams, SqlTransaction t)
+        {
+            int filas = 0;
+            int idOutput = -1;
+            try
+            {
+                
+                _cnn.Open();
+                SqlCommand cmdMaster = new SqlCommand(spMaster, _cnn, t);
+                cmdMaster.CommandType = CommandType.StoredProcedure;
+                if (masterParams != null) 
+                {
+                    SqlParameter paramOut = new SqlParameter();
+                    foreach (Parametro param in masterParams) 
+                    {
+                        //se cargan los parametros de entrada al comando
+                        //cmd.parameter.addwithvalue
+                        param.LoadParameterToCmd(cmdMaster);
+                    }
+                    if (facturaid == 0) // si la factura es nueva
+                    {
+                        //parametro de salida
+                        paramOut = new SqlParameter("@facturaidout", SqlDbType.Int);
+                        paramOut.Direction = ParameterDirection.Output;
+                        cmdMaster.Parameters.Add(paramOut);
+                        //devolvemos el id de la nueva factura
+                    }
+                    
+                    filas = cmdMaster.ExecuteNonQuery();
+                    idOutput = (int)paramOut.Value;
+                    return (filas,idOutput);
+                }
+
+            }
+            catch (SqlException)
+            {
+                return (-1,-1);
+                throw;
+
+            }
+            finally 
+            {
+                if(_cnn.State == ConnectionState.Open && _cnn != null) 
+                {
+                    _cnn.Close();
+                }
+            }
+            return (filas,idOutput);
+        }
+        public int ExecuteSPNonQueryDetalles(string spDetail, List<Parametro> detailParams, SqlTransaction t) 
+        {
+            int registros = 0;
+            try
+            {
+                _cnn.Open();
+                var cmdDetalle = new SqlCommand(spDetail, _cnn, t);
+                cmdDetalle.CommandType = CommandType.StoredProcedure;
+                //carga de parametros
+                if (detailParams != null)
+                {
+                    foreach (Parametro param in detailParams)
+                    { param.LoadParameterToCmd(cmdDetalle); }
+                }
+                //detalles agregados o afectados
+                registros = cmdDetalle.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                return -1;
+                throw;
+            }
+            finally 
+            {
+                if(_cnn.State == ConnectionState.Open && _cnn != null) 
+                {
+                    _cnn.Close();
+                }
+            }
+            
+            return registros;
         }
     }
 }

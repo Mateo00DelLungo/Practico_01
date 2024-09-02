@@ -29,9 +29,15 @@ namespace proyecto_Practica01_.Servicios
         {
             return _unitOfWork.RepositorioFacturas.Delete(id);
         }
-        public bool Save(Factura oFactura) 
+        public bool Save(Factura oFactura, bool esInsert) 
         {
-            return _unitOfWork.RepositorioFacturas.Save(oFactura);
+            return _unitOfWork.RepositorioFacturas.Save(oFactura, esInsert);
+        }
+        public void GuardarCambios() 
+        {
+            _unitOfWork.SaveChanges();
+            //se llama a t.commit al final
+
         }
     }
 }

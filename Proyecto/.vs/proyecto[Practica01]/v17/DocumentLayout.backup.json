@@ -1,65 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\",
+  "WorkspaceRootPath": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\ado\\clienterepo_ado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\ado\\clienterepo_ado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\servicios\\articuloservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\servicios\\articuloservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\parametros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\parametros.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\ado\\articulorepo_ado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\ado\\articulorepo_ado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\dominio\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\dominio\\articulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\datahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\datos\\datahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\datahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\interfaces\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\interfaces\\iclienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\ado\\facturarepo_ado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\datos\\ado\\facturarepo_ado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\ado\\facturarepo_ado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\interfaces\\ifacturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\datos\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\servicios\\facturaservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\servicios\\facturaservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\datos\\interfaces\\ifacturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\interfaces\\ifacturarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\datos\\parametro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\parametro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\dominio\\detallefactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\dominio\\detallefactura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\dominio\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\dominio\\factura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\servicios\\clienteservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\servicios\\clienteservicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\dominio\\formapago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\dominio\\formapago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\dominio\\formapago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto[practica01]\\datos\\interfaces\\iarticulorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|c:\\users\\mateo\\documents\\facu\\prog 2\\unidad 1\\entregas\\practico_01\\proyecto\\proyecto[practica01]\\datos\\interfaces\\iarticulorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84D6E43F-8635-49F2-BA2D-5B583D297A1D}|proyecto[Practica01]\\proyecto[Practica01].csproj|solutionrelative:proyecto[practica01]\\datos\\interfaces\\iarticulorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -70,180 +50,122 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IFacturaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs*",
+              "RelativeToolTip": "proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowA4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T04:38:01.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Parametro.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\Parametro.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\Parametro.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\Parametro.cs",
+              "RelativeToolTip": "proyecto[Practica01]\\Datos\\Parametro.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAIwBcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T03:59:46.938Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClienteRepo_ADO.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\ADO\\ClienteRepo_ADO.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\ADO\\ClienteRepo_ADO.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\ADO\\ClienteRepo_ADO.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Datos\\ADO\\ClienteRepo_ADO.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\UnitOfWork.cs",
+              "RelativeToolTip": "proyecto[Practica01]\\Datos\\UnitOfWork.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAABYAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T02:01:45.316Z",
+              "WhenOpened": "2024-08-31T19:54:08.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ArticuloRepo_ADO.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\ADO\\ArticuloRepo_ADO.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\ADO\\ArticuloRepo_ADO.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\ADO\\ArticuloRepo_ADO.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Datos\\ADO\\ArticuloRepo_ADO.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA0wEMAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FacturaServicio.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Servicios\\FacturaServicio.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Servicios\\FacturaServicio.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Servicios\\FacturaServicio.cs*",
+              "RelativeToolTip": "proyecto[Practica01]\\Servicios\\FacturaServicio.cs*",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T02:02:32.404Z"
+              "WhenOpened": "2024-08-31T20:16:15.728Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Program.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Program.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Program.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Title": "FacturaRepo_ADO.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs*",
+              "RelativeToolTip": "proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs*",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAE4AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:05:04.061Z"
+              "WhenOpened": "2024-08-31T02:03:02.368Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IClienteRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Interfaces\\IClienteRepository.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\Interfaces\\IClienteRepository.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Interfaces\\IClienteRepository.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Datos\\Interfaces\\IClienteRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAARAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DataHelper.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\DataHelper.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\DataHelper.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\DataHelper.cs*",
+              "RelativeToolTip": "proyecto[Practica01]\\Datos\\DataHelper.cs*",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAvwJgAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T02:00:19.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Parametros.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Parametros.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\Parametros.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Parametros.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Datos\\Parametros.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T01:49:56.026Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ArticuloServicio.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Servicios\\ArticuloServicio.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Servicios\\ArticuloServicio.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Servicios\\ArticuloServicio.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Servicios\\ArticuloServicio.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T04:19:15.499Z"
+              "WhenOpened": "2024-08-31T01:41:15.785Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DataHelper.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\DataHelper.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\DataHelper.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\DataHelper.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Datos\\DataHelper.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAYwGUAAAAIAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Program.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Program.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Program.cs*",
+              "RelativeToolTip": "proyecto[Practica01]\\Program.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T01:41:15.785Z"
+              "WhenOpened": "2024-08-31T00:05:04.061Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Articulo.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\Articulo.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Dominio\\Articulo.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\Articulo.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Dominio\\Articulo.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ClienteServicio.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Servicios\\ClienteServicio.cs",
+              "RelativeDocumentMoniker": "proyecto[Practica01]\\Servicios\\ClienteServicio.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Servicios\\ClienteServicio.cs",
+              "RelativeToolTip": "proyecto[Practica01]\\Servicios\\ClienteServicio.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:11:54.342Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FacturaRepo_ADO.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Datos\\ADO\\FacturaRepo_ADO.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAABYAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T02:03:02.368Z"
+              "WhenOpened": "2024-08-31T18:32:04.443Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "IFacturaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Datos\\Interfaces\\IFacturaRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:15:56.982Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\Cliente.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Dominio\\Cliente.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\Cliente.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Dominio\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:07:34.314Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DetalleFactura.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\DetalleFactura.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Dominio\\DetalleFactura.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\DetalleFactura.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Dominio\\DetalleFactura.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:12:43.623Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Factura.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\Factura.cs",
-              "RelativeDocumentMoniker": "proyecto[Practica01]\\Dominio\\Factura.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\Factura.cs",
-              "RelativeToolTip": "proyecto[Practica01]\\Dominio\\Factura.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAC0AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-31T00:09:34.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
               "Title": "IArticuloRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Interfaces\\IArticuloRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\Interfaces\\IArticuloRepository.cs",
               "RelativeDocumentMoniker": "proyecto[Practica01]\\Datos\\Interfaces\\IArticuloRepository.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Datos\\Interfaces\\IArticuloRepository.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Datos\\Interfaces\\IArticuloRepository.cs",
               "RelativeToolTip": "proyecto[Practica01]\\Datos\\Interfaces\\IArticuloRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -251,11 +173,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 8,
               "Title": "FormaPago.cs",
-              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\FormaPago.cs",
+              "DocumentMoniker": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Dominio\\FormaPago.cs",
               "RelativeDocumentMoniker": "proyecto[Practica01]\\Dominio\\FormaPago.cs",
-              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\proyecto[Practica01]\\Dominio\\FormaPago.cs",
+              "ToolTip": "C:\\Users\\mateo\\Documents\\Facu\\PROG 2\\Unidad 1\\Entregas\\Practico_01\\Proyecto\\proyecto[Practica01]\\Dominio\\FormaPago.cs",
               "RelativeToolTip": "proyecto[Practica01]\\Dominio\\FormaPago.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,18 @@ namespace proyecto_Practica01_.Datos
             Name = name;
             Value = value;
         }
-
+        public void LoadParameterToCmd(SqlCommand cmd)
+        {
+            cmd.Parameters.AddWithValue(Name, Value);
+        }
+        public static List<Parametro> LoadParamList(List<String> listaNombres, List<Object> listaValores)
+        {
+            List<Parametro> parametros = new List<Parametro>();
+            for (int i = 0; i < listaNombres.Count; i++)
+            {
+                parametros.Add(new Parametro(listaNombres[i], listaValores[i]));
+            }
+            return parametros;
+        }
     }
 }

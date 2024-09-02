@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace proyecto_Practica01_.Datos.ADO
 {
+    //MATEO DEL LUNGO
     public class ArticuloRepo_ADO : IArticuloRepository
     {
         public bool Delete(int id)

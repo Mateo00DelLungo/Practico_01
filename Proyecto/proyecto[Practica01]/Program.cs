@@ -20,9 +20,9 @@ if (service.Save(a1))
     Console.WriteLine("Guardado con exito");
 
 }
-else
-{
-    Console.WriteLine("No se pudo guardar");
-}
+//else
+//{
+//    Console.WriteLine("No se pudo guardar");
+//}
 
 

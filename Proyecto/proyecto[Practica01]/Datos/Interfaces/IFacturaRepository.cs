@@ -12,7 +12,8 @@ namespace proyecto_Practica01_.Datos.Interfaces
         //CRUD
         List<Factura> GetAll();
         Factura GetById(int id);
-        bool Save(Factura oFactura);
+        bool Save(Factura oFactura, bool esInsert);
+       
         bool Delete(int id);
     }
 }
