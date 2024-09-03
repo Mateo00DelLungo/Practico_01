@@ -41,7 +41,7 @@ namespace proyecto_Practica01_.Datos.ADO
         public List<Cliente> GetAll()
         {
             List<Cliente> clientes = new List<Cliente>();
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_CLIENTS", null);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_CLIENTS", null, null);
             foreach (DataRow row in dt.Rows) 
             {
                 Cliente oCliente = Mapeo(row);
@@ -54,7 +54,7 @@ namespace proyecto_Practica01_.Datos.ADO
         {
             List<Parametro> parametros = new List<Parametro>();
             parametros.Add(new Parametro("@id", id));
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_CLIENTS", parametros);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_CLIENTS", parametros, null);
             if (dt.Rows.Count > 0 && dt != null)
             {
                 Cliente oCliente = Mapeo(dt.Rows[0]);

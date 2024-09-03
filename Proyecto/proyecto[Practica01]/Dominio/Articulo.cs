@@ -11,6 +11,12 @@ namespace proyecto_Practica01_.Dominio
         public int Id { get; set; }
         public string Nombre { get; set; }
         public double PrecioUnitario { get; set; }
+        public Articulo()
+        {
+            Id = 0;
+            Nombre = "";
+            PrecioUnitario = 0;
+        }
 
         public Articulo(int id, string nombre, double precio)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,8 @@ namespace proyecto_Practica01_.Datos.Interfaces
         List<Factura> GetAll();
         Factura GetById(int id);
         bool Save(Factura oFactura, bool esInsert);
-       
-        bool Delete(int id);
+        bool DeleteFactura(Factura oFactua);
+        int DeleteDetalle(int idfactura, int iddetalle);
+        Factura MapeoFactura(DataRow row);
     }
 }

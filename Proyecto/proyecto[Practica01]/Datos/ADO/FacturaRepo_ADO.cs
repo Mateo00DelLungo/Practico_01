@@ -1,8 +1,10 @@
 ﻿using proyecto_Practica01_.Datos.Interfaces;
 using proyecto_Practica01_.Dominio;
+using proyecto_Practica01_.Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,29 +15,149 @@ namespace proyecto_Practica01_.Datos.ADO
     //MATEO DEL LUNGO
     public class FacturaRepo_ADO : IFacturaRepository
     {
-        private SqlTransaction _transaction;
-        public FacturaRepo_ADO(SqlTransaction t)
+        private SqlTransaction _transaction = null;
+        private FormaPagoServicio _formaPagoManager = new FormaPagoServicio();
+        private ArticuloServicio _articuloManager = new ArticuloServicio();
+        private ClienteServicio _clienteManager = new ClienteServicio();
+        
+        public FacturaRepo_ADO()
         {
-            _transaction = t;
+        }
+        public Factura MapeoFactura(DataRow row)
+        {
+            int id = Convert.ToInt32(row[0]);
+            int nrofactura = Convert.ToInt32(row["nro_factura"]);
+            DateTime fecha = Convert.ToDateTime(row["fecha"]);
+            
+            int formapagoid = Convert.ToInt32(row["forma_pago_id"]);
+            FormaPago oFormapago = _formaPagoManager.GetById(formapagoid);
+
+            int clienteid = Convert.ToInt32(row["cliente_id"]);
+            Cliente oCliente = _clienteManager.GetById(clienteid);
+
+            List<DetalleFactura> detalles = new List<DetalleFactura>();
+            Factura oFactura = new Factura(id, nrofactura, fecha,oFormapago,oCliente,detalles);
+            return oFactura;
+        }
+        private DetalleFactura MapeoDetalle(DataRow row) 
+        {
+            DetalleFactura oDetalle = new DetalleFactura();
+            int id = Convert.ToInt32(row[0]);
+
+            int articuloid = Convert.ToInt32(row["articulo_id"]);
+            Articulo oArticulo = _articuloManager.GetById(articuloid);
+
+            int cantidad = Convert.ToInt32(row["cantidad"]);
+            return oDetalle;
+        }
+        public int DeleteDetalle(int idfactura,int iddetalle) 
+        {
+            int filas = 0;
+            try
+            {
+                var helper = DataHelper.GetInstance();
+                List<Parametro> parametros = new List<Parametro>()
+                {
+                    new Parametro("@facturaid", idfactura),
+                    new Parametro("@detalleid",iddetalle)
+                };
+                filas = helper.ExecuteSPNonQueryDetalles("SP_DELETE_DETALLES",parametros, _transaction);
+                
+            }
+            catch (SqlException)
+            {
+                return filas = 0;
+                throw;
+            }
+            return filas;
         }
 
-        public bool Delete(int id)
+        public bool DeleteFactura(Factura oFactura)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            List<Parametro>parametros = new List<Parametro>()
+            { new Parametro("@facturaid", oFactura.Id) };
+            try
+            {
+                int filasdetalle = 0;
+                var detalles = oFactura.ObtenerDetalles();
+                foreach (var detalle in detalles)
+                {
+                    filasdetalle = DeleteDetalle(oFactura.Id, detalle.Id);
+                }
+                var helper = DataHelper.GetInstance();
+                (int filas,int output) = helper.ExecuteSPNonQueryMaster("SP_DELETE_FACTURAS", oFactura.Id, parametros, _transaction);
+                if (filasdetalle == detalles.Count() && filas == 1)
+                {
+                    result = true;
+                } 
+            }
+            catch (SqlException)
+            {
+                return false;
+                throw;
+            }
+            return result;
         }
 
         public Factura GetById(int id)
         {
-            throw new NotImplementedException();
+            Factura oFactura = new Factura();
+            List<Parametro> parametros = new List<Parametro>()
+            { new Parametro("@id", id) };
+            try
+            {
+                var helper = DataHelper.GetInstance();
+                //obtenemos la factura
+                DataTable dtMaster = helper.ExecuteSPQuery("SP_GET_BYID_FACTURAS",parametros,_transaction);
+                oFactura = MapeoFactura(dtMaster.Rows[0]);
+
+                //obtenemos los detalles de la factura
+                parametros[0].Name = "@facturaid";
+                DataTable dtDetalle = helper.ExecuteSPQuery("SP_GET_DETALLE",parametros,_transaction);
+                foreach (DataRow row in dtDetalle.Rows) 
+                {
+                    DetalleFactura detalle = MapeoDetalle(row);
+                    oFactura.AgregarDetalle(detalle);
+                }
+                
+            }
+            catch (SqlException)
+            {
+                return null;
+                throw;
+            }
+            return oFactura;
         }
 
         public List<Factura> GetAll()
         {
-            throw new NotImplementedException();
+            List<Factura> facturas = new List<Factura>();
+            var helper = DataHelper.GetInstance();
+            DataTable dtMaster = helper.ExecuteSPQuery("SP_GET_MASTER",null,_transaction);
+            //por cada factura obtenemos sus detalles
+            foreach (DataRow row in dtMaster.Rows) 
+            {
+                Factura oFactura = MapeoFactura(row);
+                List<Parametro> parametros = new List<Parametro>() 
+                { new Parametro("@facturaid",oFactura.Id)};
+                
+                DataTable dtDetalle = helper.ExecuteSPQuery("SP_GET_DETALLE", parametros,_transaction);
+                foreach(DataRow rowdetalle in dtDetalle.Rows) 
+                {
+                    //por cada detalle obtenemos sus datos
+                    DetalleFactura oDetalle = MapeoDetalle(rowdetalle);
+                    oFactura.AgregarDetalle(oDetalle);
+                    //se agrega a la lista detalle de la factura
+                }
+                facturas.Add(oFactura);
+            }
+            return facturas;
         }
         
         public bool Save(Factura oFactura, bool esInsert)
         {
+            int facturaidIn;
             bool result = false;
             string queryMaster = "SP_INSERT_FACTURAS";
             string queryDetalles = "SP_INSERT_DETALLES";
@@ -43,11 +165,12 @@ namespace proyecto_Practica01_.Datos.ADO
             List<Parametro> parametrosMaster = new List<Parametro>();
             if (oFactura != null)
             {
-                
+                facturaidIn = 0;
                 List<string> nombresMaster = new List<string>() { "@fecha", "@formapagoid", "@clienteid", "@nrofactura" };
                 List<Object> valoresMaster = new List<Object>() { oFactura.Fecha, oFactura._FormaPago.Id, oFactura._Cliente.Id, oFactura.NroFactura };
                 if (!esInsert) 
                 {
+                    facturaidIn = oFactura.Id;
                     nombresMaster.Insert(0,"@facturaid");
                     valoresMaster.Insert(0, oFactura.Id);
                     queryMaster = "SP_UPDATE_FACTURAS";
@@ -63,20 +186,21 @@ namespace proyecto_Practica01_.Datos.ADO
                 int registros = 0;
                 var helper = DataHelper.GetInstance();
                 //factura nueva creada
-                (int filasFacturas,int idfactura) = helper.ExecuteSPNonQueryMaster(queryMaster,0,parametrosMaster,_transaction);
+                (int filasFacturas,int facturaidOut) = helper.ExecuteSPNonQueryMaster(queryMaster,facturaidIn,parametrosMaster, _transaction);
+                if (facturaidIn != 0) {facturaidOut = facturaidIn;} 
+                //si no es insert ya se conoce el id factura
                 foreach (var detalle in detalles) 
                 {
-                    List<String> nombresDetalle = new List<String>() { "@articuloid", "@facturaid", "@cantidad" };
-                    List<Object> valoresDetalle = new List<Object>() { detalle._Articulo.Id, idfactura, detalle.Cantidad};
+                    List<string> nombresDetalle = new List<string>() { "@articuloid", "@facturaid", "@cantidad" };
+                    List<Object> valoresDetalle = new List<Object>() { detalle._Articulo.Id, facturaidOut, detalle.Cantidad};
                     if (!esInsert) 
                     {
-                        idfactura = oFactura.Id;
                         nombresDetalle.Insert(0, "@detalleid");
                         valoresDetalle.Insert(0,detalle.Id);
                         queryDetalles = "SP_UPDATE_DETALLES";
                     }
                     List<Parametro> parametrosDetalles = Parametro.LoadParamList(nombresDetalle,valoresDetalle); 
-                    registros = helper.ExecuteSPNonQueryDetalles(queryDetalles,parametrosDetalles,_transaction);
+                    registros = helper.ExecuteSPNonQueryDetalles(queryDetalles,parametrosDetalles, _transaction);
                 }
                 result = (filasFacturas==1 && detalles.Count == registros);
             }

@@ -17,6 +17,7 @@ namespace proyecto_Practica01_.Datos
         private DataHelper()
         {
             _cnn = new SqlConnection(Properties.Resources.cnnString);
+
         }
         public static DataHelper GetInstance() 
         {
@@ -28,15 +29,16 @@ namespace proyecto_Practica01_.Datos
         }
         public static SqlConnection GetConnection() 
         {
-            return _instance._cnn;
+            return DataHelper.GetInstance()._cnn;
         }
-        public DataTable ExecuteSPQuery(string sp, List<Parametro>? parametros) 
+        public DataTable ExecuteSPQuery(string sp, List<Parametro>? parametros, SqlTransaction t) 
         {
             DataTable dt = new DataTable();
-            
-            _cnn.Open();
+
+            if (_cnn.State == ConnectionState.Closed) { _cnn.Open(); }
             SqlCommand cmd = new SqlCommand(sp, _cnn);
             cmd.CommandType = CommandType.StoredProcedure;
+            if (t != null) { cmd.Transaction = t; }
 
             try
             {
@@ -67,11 +69,9 @@ namespace proyecto_Practica01_.Datos
         public int ExecuteSPNonQuery(string sp, List<Parametro> parametros) 
         {
             int rows = 0;
-
             try
             {
-                _cnn.Open();
-                
+                if (_cnn.State == ConnectionState.Closed) { _cnn.Open(); }
                 SqlCommand cmd = new SqlCommand(sp, _cnn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -100,15 +100,13 @@ namespace proyecto_Practica01_.Datos
             }
             return rows;
         }
-        
         public (int affectedRows,int idOut) ExecuteSPNonQueryMaster(string spMaster, int facturaid,List<Parametro> masterParams, SqlTransaction t)
         {
             int filas = 0;
             int idOutput = -1;
             try
             {
-                
-                _cnn.Open();
+                if (_cnn.State == ConnectionState.Closed) { _cnn.Open(); }
                 SqlCommand cmdMaster = new SqlCommand(spMaster, _cnn, t);
                 cmdMaster.CommandType = CommandType.StoredProcedure;
                 if (masterParams != null) 
@@ -155,7 +153,7 @@ namespace proyecto_Practica01_.Datos
             int registros = 0;
             try
             {
-                _cnn.Open();
+                if(_cnn.State == ConnectionState.Closed) { _cnn.Open(); }
                 var cmdDetalle = new SqlCommand(spDetail, _cnn, t);
                 cmdDetalle.CommandType = CommandType.StoredProcedure;
                 //carga de parametros

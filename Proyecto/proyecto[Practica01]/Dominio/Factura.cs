@@ -19,7 +19,15 @@ namespace proyecto_Practica01_.Dominio
         {
             _detalles = new List<DetalleFactura>();
         }
-
+        public Factura(int id, int nrofactura, DateTime fecha, FormaPago formaPago, Cliente cliente, List<DetalleFactura> detalles)
+        {
+            Id = id;
+            NroFactura = nrofactura;
+            Fecha = fecha;
+            _FormaPago = formaPago;
+            _Cliente = cliente;
+            _detalles = detalles;
+        }
         public List<DetalleFactura> ObtenerDetalles() 
         {
             return _detalles;

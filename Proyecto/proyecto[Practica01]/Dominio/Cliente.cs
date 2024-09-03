@@ -18,5 +18,9 @@ namespace proyecto_Practica01_.Dominio
             Nombre = nombre;
             Apellido = apellido;
         }
+        public override string ToString()
+        {
+            return $"{Apellido}, {Nombre}";
+        }
     }
 }

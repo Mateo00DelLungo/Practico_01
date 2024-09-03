@@ -35,7 +35,7 @@ namespace proyecto_Practica01_.Datos.ADO
         public List<Articulo> GetAll()
         {
             List<Articulo> articulos = new List<Articulo>();
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_ARTICULOS", null);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_ARTICULOS", null, null);
 
             foreach (DataRow row in dt.Rows)
             {
@@ -52,7 +52,7 @@ namespace proyecto_Practica01_.Datos.ADO
             {
                 new Parametro("@id", id)
             };
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_ARTICULOS", parametros);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_ARTICULOS", parametros, null);
 
             if (dt.Rows.Count > 0 && dt != null)
             {

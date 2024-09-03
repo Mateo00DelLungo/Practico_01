@@ -15,6 +15,7 @@ namespace proyecto_Practica01_.Servicios
         public FacturaServicio(UnitOfWork unitofwork)
         {
             _unitOfWork = unitofwork;
+            _unitOfWork.BeginTransaction();
         }
 
         public List<Factura> GetAll() 
@@ -25,9 +26,13 @@ namespace proyecto_Practica01_.Servicios
         {
             return _unitOfWork.RepositorioFacturas.GetById(id);
         }
-        public bool Delete(int id) 
+        public bool DeleteFactura(Factura oFactura) 
         {
-            return _unitOfWork.RepositorioFacturas.Delete(id);
+            return _unitOfWork.RepositorioFacturas.DeleteFactura(oFactura);
+        }
+        public int DeleteDetalle(int idfactura, int iddetalle) 
+        {
+            return _unitOfWork.RepositorioFacturas.DeleteDetalle(idfactura,iddetalle);
         }
         public bool Save(Factura oFactura, bool esInsert) 
         {

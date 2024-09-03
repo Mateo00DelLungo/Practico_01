@@ -10,5 +10,11 @@ namespace proyecto_Practica01_.Dominio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+
+        public FormaPago(int id, string nombre)
+        {
+            Id = id;
+            Nombre = nombre;
+        }
     }
 }
