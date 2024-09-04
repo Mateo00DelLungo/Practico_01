@@ -15,7 +15,6 @@ namespace proyecto_Practica01_.Servicios
         public FacturaServicio(UnitOfWork unitofwork)
         {
             _unitOfWork = unitofwork;
-            _unitOfWork.BeginTransaction();
         }
 
         public List<Factura> GetAll() 
@@ -40,9 +39,8 @@ namespace proyecto_Practica01_.Servicios
         }
         public void GuardarCambios() 
         {
-            _unitOfWork.SaveChanges();
+            UnitOfWork.SaveChanges();
             //se llama a t.commit al final
-
         }
     }
 }

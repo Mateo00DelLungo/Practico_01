@@ -15,13 +15,13 @@ namespace proyecto_Practica01_.Datos.ADO
     //MATEO DEL LUNGO
     public class FacturaRepo_ADO : IFacturaRepository
     {
-        private SqlTransaction _transaction = null;
         private FormaPagoServicio _formaPagoManager = new FormaPagoServicio();
         private ArticuloServicio _articuloManager = new ArticuloServicio();
         private ClienteServicio _clienteManager = new ClienteServicio();
         
         public FacturaRepo_ADO()
         {
+            
         }
         public Factura MapeoFactura(DataRow row)
         {
@@ -61,7 +61,7 @@ namespace proyecto_Practica01_.Datos.ADO
                     new Parametro("@facturaid", idfactura),
                     new Parametro("@detalleid",iddetalle)
                 };
-                filas = helper.ExecuteSPNonQueryDetalles("SP_DELETE_DETALLES",parametros, _transaction);
+                filas = helper.ExecuteSPNonQueryDetalles("SP_DELETE_DETALLES",parametros);
                 
             }
             catch (SqlException)
@@ -86,7 +86,7 @@ namespace proyecto_Practica01_.Datos.ADO
                     filasdetalle = DeleteDetalle(oFactura.Id, detalle.Id);
                 }
                 var helper = DataHelper.GetInstance();
-                (int filas,int output) = helper.ExecuteSPNonQueryMaster("SP_DELETE_FACTURAS", oFactura.Id, parametros, _transaction);
+                (int filas,int output) = helper.ExecuteSPNonQueryMaster("SP_DELETE_FACTURAS", oFactura.Id, parametros);
                 if (filasdetalle == detalles.Count() && filas == 1)
                 {
                     result = true;
@@ -109,12 +109,12 @@ namespace proyecto_Practica01_.Datos.ADO
             {
                 var helper = DataHelper.GetInstance();
                 //obtenemos la factura
-                DataTable dtMaster = helper.ExecuteSPQuery("SP_GET_BYID_FACTURAS",parametros,_transaction);
+                DataTable dtMaster = helper.ExecuteSPQuery("SP_GET_BYID_FACTURAS",parametros);
                 oFactura = MapeoFactura(dtMaster.Rows[0]);
 
                 //obtenemos los detalles de la factura
                 parametros[0].Name = "@facturaid";
-                DataTable dtDetalle = helper.ExecuteSPQuery("SP_GET_DETALLE",parametros,_transaction);
+                DataTable dtDetalle = helper.ExecuteSPQuery("SP_GET_DETALLE",parametros);
                 foreach (DataRow row in dtDetalle.Rows) 
                 {
                     DetalleFactura detalle = MapeoDetalle(row);
@@ -134,7 +134,7 @@ namespace proyecto_Practica01_.Datos.ADO
         {
             List<Factura> facturas = new List<Factura>();
             var helper = DataHelper.GetInstance();
-            DataTable dtMaster = helper.ExecuteSPQuery("SP_GET_MASTER",null,_transaction);
+            DataTable dtMaster = helper.ExecuteSPQuery("SP_GET_MASTER",null);
             //por cada factura obtenemos sus detalles
             foreach (DataRow row in dtMaster.Rows) 
             {
@@ -142,7 +142,7 @@ namespace proyecto_Practica01_.Datos.ADO
                 List<Parametro> parametros = new List<Parametro>() 
                 { new Parametro("@facturaid",oFactura.Id)};
                 
-                DataTable dtDetalle = helper.ExecuteSPQuery("SP_GET_DETALLE", parametros,_transaction);
+                DataTable dtDetalle = helper.ExecuteSPQuery("SP_GET_DETALLE", parametros);
                 foreach(DataRow rowdetalle in dtDetalle.Rows) 
                 {
                     //por cada detalle obtenemos sus datos
@@ -154,28 +154,40 @@ namespace proyecto_Practica01_.Datos.ADO
             }
             return facturas;
         }
-        
+        public List<Parametro> CargarParametrosMaster(Factura oFactura)
+        {
+            List<Parametro> parametrosMaster = new List<Parametro>();
+            List<string> nombresMaster = new List<string>() { "@fecha", "@formapagoid", "@clienteid", "@nrofactura" };
+            List<object> valoresMaster = new List<object>() { oFactura.Fecha, oFactura._FormaPago.Id, oFactura._Cliente.Id, oFactura.NroFactura };
+            parametrosMaster = Parametro.LoadParamList(nombresMaster, valoresMaster);
+            return parametrosMaster;
+        }
+        public List<Parametro> CargarParametrosDetalles(DetalleFactura oDetalle, int facturaid)
+        {
+            List<Parametro> parametrosDetalles = new List<Parametro>();
+            List<string> nombresDetalle = new List<string>() { "@articuloid", "@facturaid", "@cantidad" };
+            List<object> valoresDetalle = new List<object>() { oDetalle._Articulo.Id, facturaid, oDetalle.Cantidad };
+            parametrosDetalles = Parametro.LoadParamList(nombresDetalle, valoresDetalle);
+            return parametrosDetalles;
+        }
         public bool Save(Factura oFactura, bool esInsert)
         {
-            int facturaidIn;
+            int facturaidIn = 0;
             bool result = false;
-            string queryMaster = "SP_INSERT_FACTURAS";
-            string queryDetalles = "SP_INSERT_DETALLES";
-            var detalles = oFactura.ObtenerDetalles();
             List<Parametro> parametrosMaster = new List<Parametro>();
+            string queryMaster = "SP_SAVE_FACTURAS";
+            string queryDetalles = "SP_SAVE_DETALLES";
+            var detalles = oFactura.ObtenerDetalles();
+
             if (oFactura != null)
             {
-                facturaidIn = 0;
-                List<string> nombresMaster = new List<string>() { "@fecha", "@formapagoid", "@clienteid", "@nrofactura" };
-                List<Object> valoresMaster = new List<Object>() { oFactura.Fecha, oFactura._FormaPago.Id, oFactura._Cliente.Id, oFactura.NroFactura };
+                parametrosMaster = CargarParametrosMaster(oFactura);
                 if (!esInsert) 
                 {
                     facturaidIn = oFactura.Id;
-                    nombresMaster.Insert(0,"@facturaid");
-                    valoresMaster.Insert(0, oFactura.Id);
+                    parametrosMaster.Insert(0,new Parametro("@facturaid", oFactura.Id));
                     queryMaster = "SP_UPDATE_FACTURAS";
                 } 
-                parametrosMaster = Parametro.LoadParamList(nombresMaster, valoresMaster);
             }
             else 
             {
@@ -186,21 +198,21 @@ namespace proyecto_Practica01_.Datos.ADO
                 int registros = 0;
                 var helper = DataHelper.GetInstance();
                 //factura nueva creada
-                (int filasFacturas,int facturaidOut) = helper.ExecuteSPNonQueryMaster(queryMaster,facturaidIn,parametrosMaster, _transaction);
-                if (facturaidIn != 0) {facturaidOut = facturaidIn;} 
+                //se abre la conexion
+                (int filasFacturas,int facturaidOut) = helper.ExecuteSPNonQueryMaster(queryMaster,facturaidIn,parametrosMaster);
+                if (facturaidIn != 0) {facturaidOut = facturaidIn;}
+                List<Parametro> parametrosDetalles = new List<Parametro>();
                 //si no es insert ya se conoce el id factura
                 foreach (var detalle in detalles) 
                 {
-                    List<string> nombresDetalle = new List<string>() { "@articuloid", "@facturaid", "@cantidad" };
-                    List<Object> valoresDetalle = new List<Object>() { detalle._Articulo.Id, facturaidOut, detalle.Cantidad};
+                    parametrosDetalles = CargarParametrosDetalles(detalle, facturaidOut);
                     if (!esInsert) 
                     {
-                        nombresDetalle.Insert(0, "@detalleid");
-                        valoresDetalle.Insert(0,detalle.Id);
+                        parametrosDetalles.Insert(0, new Parametro("@detalleid", detalle.Id));
                         queryDetalles = "SP_UPDATE_DETALLES";
                     }
-                    List<Parametro> parametrosDetalles = Parametro.LoadParamList(nombresDetalle,valoresDetalle); 
-                    registros = helper.ExecuteSPNonQueryDetalles(queryDetalles,parametrosDetalles, _transaction);
+                    registros = helper.ExecuteSPNonQueryDetalles(queryDetalles,parametrosDetalles);
+                    //se cierra la conexion y se guardan los cambios
                 }
                 result = (filasFacturas==1 && detalles.Count == registros);
             }
@@ -211,5 +223,6 @@ namespace proyecto_Practica01_.Datos.ADO
             }
             return result;
         }
+
     }
 }

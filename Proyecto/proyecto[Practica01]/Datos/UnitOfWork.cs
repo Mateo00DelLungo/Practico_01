@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace proyecto_Practica01_.Datos
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IDisposable
     {
-        private  SqlTransaction _transaction = null;
-        private  SqlConnection _connection;
+        private  static SqlTransaction _transaction = null;
+        private  static SqlConnection _connection;
         private IFacturaRepository _repositorioFacturas;
         public IFacturaRepository RepositorioFacturas 
         { get 
@@ -28,7 +28,19 @@ namespace proyecto_Practica01_.Datos
         {
             _connection = DataHelper.GetConnection();
         }
-        public void BeginTransaction()
+        public static SqlTransaction GetTransaction() 
+        {
+            if (_transaction != null)
+            {
+                return _transaction;
+            }
+            else
+            {
+                BeginTransaction();
+                return _transaction;
+            }
+        }
+        public static void BeginTransaction()
         {
             if (_transaction != null)
             {
@@ -36,11 +48,10 @@ namespace proyecto_Practica01_.Datos
             }
             else
             {
-                _connection.Open();
                 _transaction = _connection.BeginTransaction();
             }
         }
-        public void SaveChanges() 
+        public static void SaveChanges() 
         {
             try
             {

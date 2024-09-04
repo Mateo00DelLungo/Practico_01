@@ -14,7 +14,7 @@ namespace proyecto_Practica01_.Datos.ADO
         public FormaPago GetById(int id)
         {
             List<Parametro> parametros = new List<Parametro>() { new Parametro("@id", id) };
-            DataTable dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_FORMAS_PAGOS", parametros, null);
+            DataTable dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_FORMAS_PAGOS", parametros);
             if(dt!=null && dt.Rows.Count > 0) 
             {
                 int idformapago = Convert.ToInt32(dt.Rows[0][0]);

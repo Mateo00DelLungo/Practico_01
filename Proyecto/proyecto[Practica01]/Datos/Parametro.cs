@@ -21,7 +21,7 @@ namespace proyecto_Practica01_.Datos
         {
             cmd.Parameters.AddWithValue(Name, Value);
         }
-        public static List<Parametro> LoadParamList(List<String> listaNombres, List<Object> listaValores)
+        public static List<Parametro> LoadParamList(List<string> listaNombres, List<object> listaValores)
         {
             List<Parametro> parametros = new List<Parametro>();
             for (int i = 0; i < listaNombres.Count; i++)

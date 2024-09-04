@@ -17,7 +17,7 @@ namespace proyecto_Practica01_.Datos.ADO
 
             List<Parametro> parametros = new List<Parametro>();
             parametros.Add(new Parametro("@id", id));
-            int result = DataHelper.GetInstance().ExecuteSPNonQuery("SP_DELETE_ARTICULOS", parametros); 
+            (int result, int idout) = DataHelper.GetInstance().ExecuteSPNonQuery("SP_DELETE_ARTICULOS", parametros); 
             return 1 == result;
             
         }
@@ -35,7 +35,7 @@ namespace proyecto_Practica01_.Datos.ADO
         public List<Articulo> GetAll()
         {
             List<Articulo> articulos = new List<Articulo>();
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_ARTICULOS", null, null);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_ARTICULOS", null);
 
             foreach (DataRow row in dt.Rows)
             {
@@ -52,7 +52,7 @@ namespace proyecto_Practica01_.Datos.ADO
             {
                 new Parametro("@id", id)
             };
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_ARTICULOS", parametros, null);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_ARTICULOS", parametros);
 
             if (dt.Rows.Count > 0 && dt != null)
             {
@@ -72,7 +72,8 @@ namespace proyecto_Practica01_.Datos.ADO
                 new Parametro("@nombre", oArticulo.Nombre),
                 new Parametro("@precio", oArticulo.PrecioUnitario)
             };
-            int result = DataHelper.GetInstance().ExecuteSPNonQuery("SP_SAVE_ARTICULOS", parametros);
+            (int result, int idout) = DataHelper.GetInstance().ExecuteSPNonQuery("SP_SAVE_ARTICULOS", parametros);
+            if (idout != null) { oArticulo.Id = idout; }
             return result == 1;
         }
     }

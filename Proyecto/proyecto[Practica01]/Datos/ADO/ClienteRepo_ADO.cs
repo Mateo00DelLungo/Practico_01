@@ -26,7 +26,8 @@ namespace proyecto_Practica01_.Datos.ADO
             parametros.Add(new Parametro("@id", oCliente.Id));
             parametros.Add(new Parametro("@nombre", oCliente.Nombre));
             parametros.Add(new Parametro("@apellido", oCliente.Apellido));
-            int result = DataHelper.GetInstance().ExecuteSPNonQuery("SP_SAVE_CLIENTES", parametros);
+            (int result, int idout)= DataHelper.GetInstance().ExecuteSPNonQuery("SP_SAVE_CLIENTES", parametros);
+            if (idout != null) {oCliente.Id = idout; }
             return 1 == result;
         }
 
@@ -34,14 +35,14 @@ namespace proyecto_Practica01_.Datos.ADO
         {
             List<Parametro> parametros = new List<Parametro>();
             parametros.Add(new Parametro("@id", id));
-            int result= DataHelper.GetInstance().ExecuteSPNonQuery("SP_DELETE_CLIENTES", parametros);
+            (int result, int idout) = DataHelper.GetInstance().ExecuteSPNonQuery("SP_DELETE_CLIENTES", parametros);
             return 1 == result;
         }
 
         public List<Cliente> GetAll()
         {
             List<Cliente> clientes = new List<Cliente>();
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_CLIENTS", null, null);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_ALL_CLIENTS", null);
             foreach (DataRow row in dt.Rows) 
             {
                 Cliente oCliente = Mapeo(row);
@@ -54,7 +55,7 @@ namespace proyecto_Practica01_.Datos.ADO
         {
             List<Parametro> parametros = new List<Parametro>();
             parametros.Add(new Parametro("@id", id));
-            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_CLIENTS", parametros, null);
+            var dt = DataHelper.GetInstance().ExecuteSPQuery("SP_GET_BYID_CLIENTS", parametros);
             if (dt.Rows.Count > 0 && dt != null)
             {
                 Cliente oCliente = Mapeo(dt.Rows[0]);

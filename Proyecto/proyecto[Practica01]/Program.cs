@@ -34,7 +34,14 @@ foreach (Articulo oArticulo in articulos)
     else { Console.WriteLine("Error al guardar"); }
 }
 
+
+
 ///////// Carga de Clientes
+///
+Console.WriteLine("                        ");
+Console.WriteLine("////////////////////////");
+Console.WriteLine("Carga Clientes");
+Console.WriteLine("////////////////////////");
 Cliente cliente1 = new Cliente(0,"Juan","Perez");
 Cliente cliente2 = new Cliente(0, "Mateo", "Del Lungo");
 Cliente cliente3 = new Cliente(0, "Franco", "Diaz");
@@ -46,18 +53,28 @@ foreach (Cliente oCliente in clientes)
 {
     if (ManagerCliente.Save(oCliente))
     {
-        Console.WriteLine("Cliente: "+oCliente.ToString() + " guardado con éxito");
+        Console.WriteLine("Cliente: [ "+oCliente.ToString() + " ] guardado con éxito");
     }
     else { Console.WriteLine("Error al guardar"); }
 }
 FormaPago formapagoEfectivo = new FormaPago(1,"efectivo");
 
+
+////////Carga de Facturas con transacción
+///
 UnitOfWork UnidadTrabajo = new UnitOfWork();
 FacturaServicio ManagerFactura = new FacturaServicio(UnidadTrabajo);
 
-Factura Factura1 = new Factura(0,1,DateTime.Now,formapagoEfectivo,cliente2, null);
+
+List<DetalleFactura> detalles = new List<DetalleFactura>();
+Factura Factura1 = new Factura(0,1,DateTime.Now,formapagoEfectivo,cliente2,detalles);
 DetalleFactura detalle1 = new DetalleFactura(0,articulo4,2);
 Factura1.AgregarDetalle(detalle1);
+
+Console.WriteLine("                        ");
+Console.WriteLine("////////////////////////");
+Console.WriteLine("Carga Facturas");
+Console.WriteLine("////////////////////////");
 if (ManagerFactura.Save(Factura1, true)) 
 {
     Console.WriteLine("Factura guardada con éxito");
