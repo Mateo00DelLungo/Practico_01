@@ -157,7 +157,7 @@ namespace proyecto_Practica01_.Datos
             int registros = 0;
             try
             {
-                //if(_cnn.State == ConnectionState.Closed) { _cnn.Open(); }
+                if(_cnn.State == ConnectionState.Closed) { _cnn.Open(); }
                 SqlTransaction t = UnitOfWork.GetTransaction();
                 var cmdDetalle = new SqlCommand(spDetail, _cnn, t);
                 cmdDetalle.CommandType = CommandType.StoredProcedure;
@@ -169,19 +169,11 @@ namespace proyecto_Practica01_.Datos
                 }
                 //detalles agregados o afectados
                 registros = cmdDetalle.ExecuteNonQuery();
-                UnitOfWork.SaveChanges();
             }
             catch (SqlException)
             {
                 return -1;
                 throw;
-            }
-            finally 
-            {
-                if(_cnn.State == ConnectionState.Open && _cnn != null) 
-                {
-                    _cnn.Close();
-                }
             }
             return registros;
         }

@@ -31,7 +31,7 @@ namespace proyecto_Practica01_.Servicios
         }
         public int DeleteDetalle(int idfactura, int iddetalle) 
         {
-            return _unitOfWork.RepositorioFacturas.DeleteDetalle(idfactura,iddetalle);
+            return _unitOfWork.RepositorioFacturas.DeleteSoloDetalle(idfactura,iddetalle);
         }
         public bool Save(Factura oFactura, bool esInsert) 
         {

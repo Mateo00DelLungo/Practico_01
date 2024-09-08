@@ -15,7 +15,7 @@ namespace proyecto_Practica01_.Datos.Interfaces
         Factura GetById(int id);
         bool Save(Factura oFactura, bool esInsert);
         bool DeleteFactura(Factura oFactua);
-        int DeleteDetalle(int idfactura, int iddetalle);
+        int DeleteSoloDetalle(int idfactura, int iddetalle);
         Factura MapeoFactura(DataRow row);
     }
 }
