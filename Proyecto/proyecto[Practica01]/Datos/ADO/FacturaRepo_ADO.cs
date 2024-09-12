@@ -247,6 +247,7 @@ namespace proyecto_Practica01_.Datos.ADO
                     }
                     registros = helper.ExecuteSPNonQueryDetalles(queryDetalles,parametrosDetalles);
                     //se cierra la conexion y se guardan los cambios
+                    UnitOfWork.SaveChanges();
                 }
                 result = (filasFacturas==1 && detalles.Count == registros);
             }
@@ -254,6 +255,15 @@ namespace proyecto_Practica01_.Datos.ADO
             {
                 result = false;
                 throw;
+            }
+            finally
+            {
+                var cnn = DataHelper.GetConnection();
+                if(cnn != null && cnn.State == ConnectionState.Open)
+                {
+                    cnn.Close();
+                    cnn.Dispose();
+                }
             }
             return result;
         }
